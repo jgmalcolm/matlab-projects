@@ -1,0 +1,15 @@
+--- functionality ---
+
+subpixelshift padding
+
+linear expects to get the gradient of img_beta so it can directly apply it,
+but now kernel siply returns d2_beta so we can't directly apply it as we do d2.
+we need to generalize the update so it doesn't expect img_beta
+
+is U already normalized by sqrt(lambda_k) ?
+
+
+
+--- directions ---
+
+SAD instead of SSD

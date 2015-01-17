@@ -1,0 +1,50 @@
+Wallace,
+  I got exactly the same numbers as you sent me, reproduced here for reference.
+-jm
+
+---=== direct mapped cache ===---
+>> run;
+s =
+         transfer: [0 91 45 53]
+    invalidations: 15
+counts =
+    19   171    32    48   754
+s =
+         transfer: [22 0 97 73]
+    invalidations: 16
+counts =
+    43   175    70    91   645
+s =
+         transfer: [2 3 0 80]
+    invalidations: 31
+counts =
+     3    68    60   134   759
+s =
+         transfer: [26 2 3 0]
+    invalidations: 33
+counts =
+    80     9    30   165   740
+
+
+---=== 2-Way LRU cache ===---
+>> run;
+s =
+         transfer: [0 12 10 6]
+    invalidations: 12
+counts =
+     1    21     3     9   478
+s =
+         transfer: [6 0 10 23]
+    invalidations: 13
+counts =
+     5    24     6    17   460
+s =
+         transfer: [2 4 0 13]
+    invalidations: 18
+counts =
+     1    10     7    23   471
+s =
+         transfer: [2 1 3 0]
+    invalidations: 28
+counts =
+    11     5     3    27   466

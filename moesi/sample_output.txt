@@ -1,0 +1,49 @@
+***P0***		***P1***
+P0 to P0: 0		P1 to P0: 22
+P0 to P1: 91		P1 to P1: 0
+P0 to P2: 45		P1 to P2: 97
+P0 to P3: 53		P1 to P3: 73
+invalidations: 15	invalidations: 16
+M: 19			M: 43
+O: 171			O: 175
+E: 32			E: 70
+S: 48			S: 91
+I: 754			I: 645
+
+***P2***		***P3***
+P2 to P0: 2		P3 to P0: 26
+P2 to P1: 3		P3 to P1: 2
+P2 to P2: 0		P3 to P2: 3
+P2 to P3: 80		P3 to P3: 0
+invalidations: 31	invalidations: 33
+M: 3			M: 80
+O: 68			O: 9
+E: 60			E: 30
+S: 134			S: 165
+I: 759			I: 740
+
+
+
+***P0***		***P1***
+P0 to P0: 0		P1 to P0: 6
+P0 to P1: 12		P1 to P1: 0
+P0 to P2: 10		P1 to P2: 10
+P0 to P3: 6		P1 to P3: 23
+invalidations: 12	invalidations: 13
+M: 1			M: 5
+O: 21			O: 24
+E: 3			E: 6
+S: 9			S: 17
+I: 478			I: 460
+
+***P2***		***P3***
+P2 to P0: 2		P3 to P0: 2
+P2 to P1: 4		P3 to P1: 1
+P2 to P2: 0		P3 to P2: 3
+P2 to P3: 13		P3 to P3: 0
+invalidations: 18	invalidations: 28
+M: 1			M: 11
+O: 10			O: 5
+E: 7			E: 3
+S: 23			S: 27
+I: 471			I: 466

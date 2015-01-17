@@ -1,0 +1,15 @@
+-- high priority
+  RGB color space
+
+-- low priority
+  Tryphon's metric
+
+
+problem: w(i) not discriminating enough
+
+but even putting in perfect w(i) didn't help much.
+  - but that was because we weren't moving that w(i) to keep up so it probably
+    drifted and so gave bad measurements.
+
+problem: v(i) not discriminating enough
+  - DONE - Epanechnikov kernel -> Gaussian kernel

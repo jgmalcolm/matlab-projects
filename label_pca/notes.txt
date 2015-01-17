@@ -1,0 +1,48 @@
+load ~/src/matlab/images/Harvard_BIRN/DATA_
+
+% transformed label maps (phi_pca)
+lmaps = map(@(x) label_map(x,3), maps);
+lmaps_ = map(@(x) ...
+             transform3(x{1}, x{2}, 'cubic'), ...
+             zip({lmaps{1:25}}, pose));
+x_train = cell2mat(map(@(x) x(:), lmaps_));
+fn = shape_lpca(x_train);
+
+% transformed images -> probabilities -> label space (Psi)
+imgs_norm = normalize(imgs, maps, imgs{1}, maps{1});
+d_norm = distributions(imgs_norm, maps)
+psi = img2psi(imgs_norm, d_norm);
+
+psi_ = map(@(x) ...
+           transform3(x{1}, x{2}, 'cubic'), ...
+           zip({psi{1:25}}, pose));
+
+% transform test set to first (transformed) training map
+pose_test = register3ref({maps{26:end}}, lmaps_{1})
+
+
+
+im = flipdim(permute(imgs_norm_{1}, [3 1 2]), 1);
+
+lm_alpha = reshape(fn_kpca.preimage(flatten(psi_{1})), size(psi_{1}));
+lm = flipdim(permute(lm_alpha, [3 1 2 4]), 1);
+lm_slice = label_restrict(squeeze(lm(:,:,25,:)));
+
+cla; imagesc(im_slice);  hold on
+phi = ls2iso(lm_slice, 2);
+contour(phi, [o o], 'r',  'LineWidth', 2)
+phi = ls2iso(lm_slice, 3);
+contour(phi, [o o], 'b',  'LineWidth', 2)
+
+
+
+% transform test set
+psi_test_ = map(@(x) ...
+                transform3(x{1},x{2},'cubic'), ...
+                zip({psi{26:end}}, pose_test_1))
+lmaps_test_ = map(@(x) ...
+                  transform3(x{1},x{2},'cubic'), ...
+                  zip({lmaps{26:end}}, pose_test_1))
+imgs_test_ = map(@(x) ...
+                 transform3(single(x{1}),x{2},'cubic'), ...
+                 zip({imgs_norm{26:end}}, pose_test_1))
